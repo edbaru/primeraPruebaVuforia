@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/PantallaInicio.unity
+    guid: cd1bc88ea7401744ba5b71d130190342
+  - enabled: 1
+    path: Assets/Scenes/SistemaSolarFinito.unity
+    guid: f825ad05aab04bd4aa73595db881d750
+  - enabled: 1
+    path: Assets/Scenes/SistemaSolarInfinito.unity
+    guid: 009d251a17b6ab64d8ce6cdf92db1746
+  - enabled: 0
+    path: Assets/Scenes/GroundPlane.unity
+    guid: f97a5ffe2c3486f4496b9d6eaa2a1ac8
+  m_configObjects:
+    UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 242cc560403978040b045bb70700bbea, type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+    com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 9a99985f77f94294892a3cbf31840267, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ec0009c120b6b9349ad36382916813c1, type: 2}

@@ -1,0 +1,45 @@
+﻿#include "pch-c.h"
+
+
+#include "codegen/il2cpp-codegen-metadata.h"
+
+
+
+
+
+extern void PlanetRing_OnEnable_mD777DB0E4EBEE5C944BE60E1F309137AFA18B6AA (void);
+extern void PlanetRing_OnValidate_m06C3E8A17B5698B322C4FB541E0F4E0E83942E3A (void);
+extern void PlanetRing_SetUpRing_m0C67476ECF054A32E49AF1DF0672CB0274C8A804 (void);
+extern void PlanetRing_BuildRingMesh_m8B30D1CCCA913798A181C4EE1D5D1F78A4C94A43 (void);
+extern void PlanetRing__ctor_m588D8856EC9E44FC4621B2AB29C57BB2E91B2042 (void);
+extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
+extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
+extern void VuforiaLicense_GetLicenseKey_m796D51E5EF1C53F3D62BA4EA8806AC1FB1A5E3C4 (void);
+extern void VuforiaLicense__ctor_m094B92B3323DFFD79ADB696474D5D158C95E291B (void);
+static Il2CppMethodPointer s_methodPointers[9] = 
+{
+	PlanetRing_OnEnable_mD777DB0E4EBEE5C944BE60E1F309137AFA18B6AA,
+	PlanetRing_OnValidate_m06C3E8A17B5698B322C4FB541E0F4E0E83942E3A,
+	PlanetRing_SetUpRing_m0C67476ECF054A32E49AF1DF0672CB0274C8A804,
+	PlanetRing_BuildRingMesh_m8B30D1CCCA913798A181C4EE1D5D1F78A4C94A43,
+	PlanetRing__ctor_m588D8856EC9E44FC4621B2AB29C57BB2E91B2042,
+	Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6,
+	Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B,
+	VuforiaLicense_GetLicenseKey_m796D51E5EF1C53F3D62BA4EA8806AC1FB1A5E3C4,
+	VuforiaLicense__ctor_m094B92B3323DFFD79ADB696474D5D158C95E291B,
+};
+IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
+const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
+{
+	"Assembly-CSharp.dll",
+	9,
+	s_methodPointers,
+	0,
+	NULL,
+	0,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+	NULL,
+};
