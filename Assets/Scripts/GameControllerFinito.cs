@@ -27,6 +27,7 @@ public class GameControllerFinito : MonoBehaviour
     [SerializeField] AudioSource efectoSonidoGameWin;
 
     private int posAleatoria;
+    private bool victoriaProcesada;
 
     void Start()
     {
@@ -60,8 +61,9 @@ public class GameControllerFinito : MonoBehaviour
         {
             tiempoTxt.text = "Tiempo: " + tiempoTotal.ToString("F1");
         }
-        if (opcionesMostrar.Count == 0)
+        if (opcionesMostrar.Count == 0 && !victoriaProcesada)
         {
+            victoriaProcesada = true;
             GuardarPuntuacionWin(puntuacion);
             gameWin.SetActive(true);
             gameUI.SetActive(false);
@@ -76,7 +78,6 @@ public class GameControllerFinito : MonoBehaviour
         planetaAdivinarTxt.text = opcionesMostrar[posAleatoria];
     }
 
-    //Se ejecuta inmediatamente despues de que cambia el planeta por elejir el correcto
     public void Chequar(string planetaEncontrado)
     {
         if(planetaEncontrado == planetaAdivinarTxt.text)
@@ -90,9 +91,9 @@ public class GameControllerFinito : MonoBehaviour
             Time.timeScale = 0f;
         }
 
-        if(planetaEncontrado != planetaAdivinarTxt.text)
+        else
         {
-            //vidas--;
+            vidas--;
             vidasTxt.text = "Vidas: " + vidas.ToString();
             efectoSonidoIncorrecto.Play();
             ReiniciarContador();
