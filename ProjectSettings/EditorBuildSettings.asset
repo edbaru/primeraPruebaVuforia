@@ -8,16 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PantallaInicio.unity
     guid: cd1bc88ea7401744ba5b71d130190342
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SistemaSolarFinito.unity
     guid: f825ad05aab04bd4aa73595db881d750
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SistemaSolarInfinito.unity
     guid: 009d251a17b6ab64d8ce6cdf92db1746
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GroundPlane.unity
     guid: f97a5ffe2c3486f4496b9d6eaa2a1ac8
   m_configObjects:

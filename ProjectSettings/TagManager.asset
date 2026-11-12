@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemigo
+  - Amigo
+  - Suelo
+  - Proyectil
   layers:
   - Default
   - TransparentFX

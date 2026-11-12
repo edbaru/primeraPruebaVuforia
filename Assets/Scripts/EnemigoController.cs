@@ -14,13 +14,17 @@ public class EnemigoController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("Suelo"))
+        if (collider.gameObject.CompareTag("Suelo"))
         {
             if (gameObject.CompareTag("Enemigo"))
             {
-                Debug.Log("Pierdes vida");
+                JuegoSueloController.instanciaJuego.ChoqueSueloEnemigo();
+            }
+            if (gameObject.CompareTag("Amigo"))
+            {
+                JuegoSueloController.instanciaJuego.ChoqueSueloAmigo();
             }
             Destroy(gameObject);
         }
