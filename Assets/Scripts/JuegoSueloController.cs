@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class JuegoSueloController : MonoBehaviour
 {
+    /*
+     * Cosas que faltan por hacer:
+     * Musica y efectos de sonido
+     * Revisar la velocidad de caida de los objetos
+     * Fin del juego con vidas
+     * Modelo 3D para objetos que caen y arma que dispara
+     * Efectos visuales cuando se dispara y cuando golpea un objeto
+     * Pullir menu inicio y hacer menu fin del juego
+     */
     [SerializeField] GameObject prefabEnemigo;
     [SerializeField] GameObject prefabAmigo;
     [SerializeField] TextMeshProUGUI textoVidas;
