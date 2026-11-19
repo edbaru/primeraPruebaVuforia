@@ -25,7 +25,7 @@ public class JuegoSueloController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        IniciaJuego();
     }
 
     private void Awake()
@@ -49,7 +49,7 @@ public class JuegoSueloController : MonoBehaviour
         while (juegoActivo)
         {
             yield return new WaitForSeconds(1);
-            
+
             GameObject prefabInstanciar = (Random.value > 0.3f) ? prefabEnemigo : prefabAmigo;
 
             Vector3 posicionAleatoria = transform.position + new Vector3(Random.Range(-rangoSpawn, rangoSpawn), alturaBolaCae, 3.0f);
