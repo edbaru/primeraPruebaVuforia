@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -16,16 +17,20 @@ public class JuegoSueloController : MonoBehaviour
     [SerializeField] GameObject prefabEnemigo;
     [SerializeField] GameObject prefabAmigo;
     [SerializeField] TextMeshProUGUI textoVidas;
+    [SerializeField] TextMeshProUGUI textoBalas;
     public bool juegoActivo = false;
     private float rangoSpawn = 1.0f;
     private float alturaBolaCae = 3f;
     private int puntuacion = 0;
+    private int vidas = 5;
     public static JuegoSueloController instanciaJuego;
+
+    public static event Action<int> BalaDisparada;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        IniciaJuego();
+        LanzadorProyectiles.ActualizaHUD += OnActualizarHUD;
     }
 
     private void Awake()
@@ -50,9 +55,9 @@ public class JuegoSueloController : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
 
-            GameObject prefabInstanciar = (Random.value > 0.3f) ? prefabEnemigo : prefabAmigo;
+            GameObject prefabInstanciar = (UnityEngine.Random.value > 0.3f) ? prefabEnemigo : prefabAmigo;
 
-            Vector3 posicionAleatoria = transform.position + new Vector3(Random.Range(-rangoSpawn, rangoSpawn), alturaBolaCae, 3.0f);
+            Vector3 posicionAleatoria = transform.position + new Vector3(UnityEngine.Random.Range(-rangoSpawn, rangoSpawn), alturaBolaCae, 3.0f);
 
             Instantiate(prefabInstanciar, posicionAleatoria, Quaternion.identity, transform);
         }
@@ -60,7 +65,7 @@ public class JuegoSueloController : MonoBehaviour
 
     public void ChoqueSueloEnemigo()
     {
-        puntuacion--;
+        vidas--;
         textoVidas.text = "Puntuacion: " + puntuacion;
     }
     public void ChoqueSueloAmigo()
@@ -74,5 +79,10 @@ public class JuegoSueloController : MonoBehaviour
         juegoActivo = false;
         StopAllCoroutines();
         Application.Quit();
+    }
+
+    public void OnActualizarHUD(int balas)
+    {
+        textoBalas.text = "Balas: " + balas + "/8";
     }
 }

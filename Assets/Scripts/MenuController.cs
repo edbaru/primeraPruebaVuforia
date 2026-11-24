@@ -11,7 +11,6 @@ public class MenuController : MonoBehaviour
     public void JugarInfinito()
     {
         SceneManager.LoadScene("SistemaSolarInfinito");
-        
     }
 
     public void Salir()
