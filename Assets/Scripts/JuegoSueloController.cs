@@ -18,6 +18,7 @@ public class JuegoSueloController : MonoBehaviour
     [SerializeField] GameObject prefabAmigo;
     [SerializeField] TextMeshProUGUI textoVidas;
     [SerializeField] TextMeshProUGUI textoBalas;
+    [SerializeField] TextMeshProUGUI textoPuntos;
     public bool juegoActivo = false;
     private float rangoSpawn = 1.0f;
     private float alturaBolaCae = 3f;
@@ -25,9 +26,6 @@ public class JuegoSueloController : MonoBehaviour
     private int vidas = 5;
     public static JuegoSueloController instanciaJuego;
 
-    public static event Action<int> BalaDisparada;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         LanzadorProyectiles.ActualizaHUD += OnActualizarHUD;
@@ -66,12 +64,12 @@ public class JuegoSueloController : MonoBehaviour
     public void ChoqueSueloEnemigo()
     {
         vidas--;
-        textoVidas.text = "Puntuacion: " + puntuacion;
+        textoVidas.text = "Vidas: " + vidas;
     }
     public void ChoqueSueloAmigo()
     {
         puntuacion++;
-        textoVidas.text = "Puntuacion: " + puntuacion;
+        textoPuntos.text = "Puntuacion: " + puntuacion;
     }
 
     public void SalirJuego()
@@ -84,5 +82,10 @@ public class JuegoSueloController : MonoBehaviour
     public void OnActualizarHUD(int balas)
     {
         textoBalas.text = "Balas: " + balas + "/8";
+    }
+
+    void OnDisable()
+    {
+        LanzadorProyectiles.ActualizaHUD -= OnActualizarHUD;
     }
 }

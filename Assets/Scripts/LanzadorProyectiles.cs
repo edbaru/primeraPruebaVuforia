@@ -8,6 +8,7 @@ public class LanzadorProyectiles : MonoBehaviour
     [SerializeField] GameObject arma;
     [SerializeField] AudioSource sonidoDisparo;
     [SerializeField] AudioSource sonidoRecarga;
+    [SerializeField] Transform salidaDisparo;
     private Animator animator;
     private int balasActuales = 8;
     private bool intentandoRecargar = false;
@@ -21,21 +22,20 @@ public class LanzadorProyectiles : MonoBehaviour
     void Update()
     {
         Vector2 posicionPantalla;
-        arma.transform.localEulerAngles = new Vector3(arma.transform.localEulerAngles.x, arma.transform.localEulerAngles.y, 0);
 
         if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
         {
             if (balasActuales > 0)
             {
                 posicionPantalla = Touchscreen.current.primaryTouch.position.ReadValue();
-    
+
                 Ray rayo = Camera.main.ScreenPointToRay(posicionPantalla);
-                arma.transform.LookAt(rayo.GetPoint(10));
-    
-                Vector3 posicionSalida = arma.transform.position + arma.transform.forward * 1f + arma.transform.up * 0.4f;
-    
+                arma.transform.LookAt(rayo.GetPoint(10f));
+
+                Vector3 posicionSalida = salidaDisparo.position;
+
                 GameObject bala = Instantiate(prefabProyectil, posicionSalida, Quaternion.LookRotation(rayo.direction));
-    
+
                 Rigidbody rb = bala.GetComponent<Rigidbody>();
                 rb.AddForce(rayo.direction * 100, ForceMode.Impulse);
                 //sonidoDisparo.Play();
@@ -67,10 +67,10 @@ public class LanzadorProyectiles : MonoBehaviour
 
     public void RecargarBalas()
     {
-        
         //sonidoRecarga.Play();
         balasActuales = 8;
         ActualizarHUD();
         intentandoRecargar = false;
+        animator.SetBool("intentandoRecargar", false);
     }
 }
